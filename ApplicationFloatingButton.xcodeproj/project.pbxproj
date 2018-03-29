@@ -15,6 +15,8 @@
 		E51FC650206CFFFC003D93F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E51FC64F206CFFFC003D93F4 /* main.m */; };
 		E51FC65A206CFFFC003D93F4 /* ApplicationFloatingButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E51FC659206CFFFC003D93F4 /* ApplicationFloatingButtonTests.m */; };
 		E51FC665206CFFFC003D93F4 /* ApplicationFloatingButtonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E51FC664206CFFFC003D93F4 /* ApplicationFloatingButtonUITests.m */; };
+		E51FC674206D007D003D93F4 /* ApplicationFloatingButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E51FC673206D007D003D93F4 /* ApplicationFloatingButtonWindow.m */; };
+		E51FC677206D00EB003D93F4 /* ApplicationFloatingButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = E51FC676206D00EB003D93F4 /* ApplicationFloatingButtonController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		E51FC660206CFFFC003D93F4 /* ApplicationFloatingButtonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationFloatingButtonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E51FC664206CFFFC003D93F4 /* ApplicationFloatingButtonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationFloatingButtonUITests.m; sourceTree = "<group>"; };
 		E51FC666206CFFFC003D93F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E51FC672206D007D003D93F4 /* ApplicationFloatingButtonWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationFloatingButtonWindow.h; sourceTree = "<group>"; };
+		E51FC673206D007D003D93F4 /* ApplicationFloatingButtonWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationFloatingButtonWindow.m; sourceTree = "<group>"; };
+		E51FC675206D00EB003D93F4 /* ApplicationFloatingButtonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationFloatingButtonController.h; sourceTree = "<group>"; };
+		E51FC676206D00EB003D93F4 /* ApplicationFloatingButtonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationFloatingButtonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,10 @@
 				E51FC64B206CFFFC003D93F4 /* LaunchScreen.storyboard */,
 				E51FC64E206CFFFC003D93F4 /* Info.plist */,
 				E51FC64F206CFFFC003D93F4 /* main.m */,
+				E51FC672206D007D003D93F4 /* ApplicationFloatingButtonWindow.h */,
+				E51FC673206D007D003D93F4 /* ApplicationFloatingButtonWindow.m */,
+				E51FC675206D00EB003D93F4 /* ApplicationFloatingButtonController.h */,
+				E51FC676206D00EB003D93F4 /* ApplicationFloatingButtonController.m */,
 			);
 			path = ApplicationFloatingButton;
 			sourceTree = "<group>";
@@ -265,8 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51FC677206D00EB003D93F4 /* ApplicationFloatingButtonController.m in Sources */,
 				E51FC645206CFFFC003D93F4 /* ViewController.m in Sources */,
 				E51FC650206CFFFC003D93F4 /* main.m in Sources */,
+				E51FC674206D007D003D93F4 /* ApplicationFloatingButtonWindow.m in Sources */,
 				E51FC642206CFFFC003D93F4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
