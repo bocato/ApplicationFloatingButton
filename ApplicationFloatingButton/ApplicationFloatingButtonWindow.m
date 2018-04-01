@@ -12,7 +12,6 @@
 @interface ApplicationFloatingButtonWindow()
 
 #pragma mark - Properties
-@property (strong, nonatomic) UIButton *floatingButton;
 @property (strong, nonatomic) ApplicationFloatingButtonController *floatingButtonViewController;
 
 @end
@@ -21,7 +20,7 @@
 
 #pragma mark - Initialization
 - (instancetype)init {
-    self = [super init];
+    self = [super initWithFrame:UIScreen.mainScreen.bounds];
     if (self) {
         self.backgroundColor = nil; // make background transparent
     }
@@ -30,11 +29,11 @@
 
 #pragma mark - Gesture Handling
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    if(self.floatingButton) {
-        CGPoint floatingButtonPoint = [self convertPoint:point toView:self.floatingButton];
-        return [self.floatingButton pointInside:floatingButtonPoint withEvent:event];
+    if(self.floatingButton == nil){
+        return NO;
     }
-    return [super pointInside:point withEvent:event];
+    CGPoint floatingButtonPoint = [self convertPoint:point toView:self.floatingButton];
+    return [self.floatingButton pointInside:floatingButtonPoint withEvent:event];
 }
 
 @end

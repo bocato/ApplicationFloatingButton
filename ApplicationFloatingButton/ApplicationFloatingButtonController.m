@@ -10,6 +10,10 @@
 
 @interface ApplicationFloatingButtonController ()
 
+#pragma mark - Properties
+@property (strong, nonatomic) UIButton *floatingButton;
+@property (strong, nonatomic) ApplicationFloatingButtonWindow *window;
+
 #pragma mark - Action Blocks
 @property (assign, nonatomic) void(^touchUpInsideActionBlock)(ApplicationFloatingButtonController *controller);
 
@@ -57,6 +61,7 @@
     [view addSubview:button];
     self.view = view;
     self.floatingButton = button;
+    self.window.floatingButton = self.floatingButton;
     [self setupPanGestureRecognizers];
     [self setupFloatingButtonTouchUpInsideAction];
 }
@@ -68,14 +73,16 @@
 
 #pragma mark - Elements Factory
 - (UIButton *)createButton {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = UIColor.clearColor;
     button.layer.shadowColor = UIColor.blackColor.CGColor;
-    button.layer.shadowRadius = 3;
-    button.layer.shadowOpacity = 0.8;
-    button.layer.shadowOffset = CGSizeZero;
-    [button sizeToFit];
-    button.frame = CGRectMake(0, 20, button.bounds.size.width, button.bounds.size.height);
+    button.layer.shadowRadius = 5;
+    button.layer.shadowOpacity = 0.7;
+    button.layer.shadowOffset = CGSizeMake(0, 5);
+    [button setImage:[UIImage imageNamed:@"user-feedback-button"] forState:UIControlStateNormal];
+    button.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    button.frame = CGRectMake(0, 20, 44, 44);
+    button.alpha = 0.5;
     return button;
 }
 
@@ -93,10 +100,12 @@
     newButtonCenter.x += gestureOffset.x;
     newButtonCenter.y += gestureOffset.y;
     self.floatingButton.center = newButtonCenter;
+    self.floatingButton.alpha = 1.0;
     
     if (panGestureRecognizer.state == UIGestureRecognizerStateEnded || panGestureRecognizer.state == UIGestureRecognizerStateCancelled ) {
         [UIView animateWithDuration:0.25 animations:^{
             [self snapButtonToBestPosition];
+            self.floatingButton.alpha = 0.5;
         }];
     }
     

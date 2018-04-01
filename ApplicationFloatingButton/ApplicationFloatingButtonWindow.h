@@ -10,4 +10,7 @@
 
 @interface ApplicationFloatingButtonWindow : UIWindow
 
+#pragma mark - Properties
+@property (strong, nonatomic) UIButton *floatingButton;
+
 @end
