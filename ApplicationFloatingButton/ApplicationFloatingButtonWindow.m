@@ -11,9 +11,6 @@
 
 @interface ApplicationFloatingButtonWindow()
 
-#pragma mark - Properties
-@property (strong, nonatomic) ApplicationFloatingButtonController *floatingButtonViewController;
-
 @end
 
 @implementation ApplicationFloatingButtonWindow
@@ -29,9 +26,7 @@
 
 #pragma mark - Gesture Handling
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    if(self.floatingButton == nil){
-        return NO;
-    }
+    if (self.floatingButton == nil) return NO;
     CGPoint floatingButtonPoint = [self convertPoint:point toView:self.floatingButton];
     return [self.floatingButton pointInside:floatingButtonPoint withEvent:event];
 }

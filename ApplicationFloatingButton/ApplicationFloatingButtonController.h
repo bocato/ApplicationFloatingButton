@@ -11,6 +11,9 @@
 
 @interface ApplicationFloatingButtonController : UIViewController
 
+#pragma mark - Properties
+@property (strong, nonatomic) UIButton *floatingButton;
+
 #pragma mark - Initialization
 + (ApplicationFloatingButtonController *)newInstanceWithTouchUpInsideActionBlock:(void(^)(ApplicationFloatingButtonController *controller))touchUpInsideActionBlock;
 

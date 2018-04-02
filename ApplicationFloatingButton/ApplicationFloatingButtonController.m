@@ -11,11 +11,10 @@
 @interface ApplicationFloatingButtonController ()
 
 #pragma mark - Properties
-@property (strong, nonatomic) UIButton *floatingButton;
 @property (strong, nonatomic) ApplicationFloatingButtonWindow *window;
 
 #pragma mark - Action Blocks
-@property (assign, nonatomic) void(^touchUpInsideActionBlock)(ApplicationFloatingButtonController *controller);
+@property (strong, nonatomic) void(^touchUpInsideActionBlock)(ApplicationFloatingButtonController *controller);
 
 @end
 
